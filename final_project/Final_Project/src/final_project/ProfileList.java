@@ -13,10 +13,12 @@ public class ProfileList {
 		
 	}
 	
-	public Users findFriend() {
+	public User findFriend() {
 		User firstFriend = friends.getFirst();
-		int friends.size();
-		fpr 
+		int sze = friends.size();
+		for(int i = 0; i < sze ; i++){
+			if 
+		}
 	}
 	
 	public boolean removeFriend() {
