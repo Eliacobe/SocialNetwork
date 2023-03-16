@@ -7,18 +7,21 @@ public class ProfileList {
 	public ProfileList() {
 		
 	}
-	
+
 	public void addFriend(User friend) {
 		friends.add(friend);
 		
 	}
 	
-	public User findFriend() {
-		User firstFriend = friends.getFirst();
-		int sze = friends.size();
-		for(int i = 0; i < sze ; i++){
-			if 
+	public User findFriend(int friendToFind) {
+		User finding;
+		for(int i =0; i < friends.size(); i++){
+			 finding = friends.get(i);
+			 if (finding.getUserID() == friendToFind){
+				return finding
+			 }
 		}
+		return null;
 	}
 	
 	public boolean removeFriend() {
