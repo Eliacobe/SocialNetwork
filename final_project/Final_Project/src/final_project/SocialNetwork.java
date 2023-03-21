@@ -71,7 +71,33 @@ class SocialNetwork
         List<User> friendFriends = new ArrayList<>();
         for (User friendFriend : friend.getFriends())
         {
-            if ()
+            if (!friendFriend.getUserID().equals(friendUserID))
+            {
+                friendFriends.add(friendFriend);
+            }
         }
+        return friendFriends;
+    }
+
+    public list<User> filterFriends(String myUserID, String filterType, String filterValue)
+    {
+        List<User> myFriends = getMyFriends(myUserID);
+        List<User> filteredFriends = new ArrayList<>();
+        for (User friend : myFriends)
+        {
+            if (filterType.equals("workplace") && friend.getWorkplace().equals(filterValue))
+            {
+                filteredFriends.add(friend);
+            }
+            if (filterType.equals("hometown") && friend.getHometown().equals(filterValue))
+            {
+                filteredFriends.add(friend);
+            }
+            else
+            {
+                System.out.println("Cannot filter for "+filterValue);
+            }
+        }
+        return filteredFriends;
     }
 }

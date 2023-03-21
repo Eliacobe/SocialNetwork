@@ -40,8 +40,8 @@ public class UserPost {
 	public int getLikes() {
 		return likes;
 	}
-	public void setLikes(int likes) {
-		this.likes = likes;
+	public void addLikes() {
+		likes+=1;
 	}
 	
 	
