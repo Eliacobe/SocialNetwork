@@ -8,8 +8,8 @@ public class Menu
 
     public void profile()
     {
-        System.out.println(User.getName() + "\t" + User.getUserID());
-        System.out.println(User.getHometown() +"\t"+User.getWorkplace());
+        System.out.println(mainUser.getName() + "\t" + mainUser.getUserID());
+        System.out.println(mainUser.getHometown() +"\t"+ mainUser.getWorkplace());
     }
 
     public void friends(){
@@ -23,8 +23,11 @@ public class Menu
 
     public static void main(String[] args)
     {
-        //setup goes here. Initiating users ect.
+        mainUser = new User(11, "Jacob", "Generic Shop", "Dundee"); // only for testing to be replaced by leading from file.
+        //not sure when the SocialNetwork class needs to be initiated?
 
+        //setup goes here. Initiating users ect.
+        //initally load from file to get basic set of users.
         menu();
     }
 
