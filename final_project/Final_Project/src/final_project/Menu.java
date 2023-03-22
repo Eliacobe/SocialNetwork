@@ -19,10 +19,18 @@ public class Menu
         System.out.println("To view your friends list press 2: ");
         System.out.println("To view your posts press 3: ");
         int ans = scan.nextInt();
-
-        if(ans == 1)
-        {
+        switch(ans){
+            case 1:
             profile();
+            break;
+
+            case 2:
+            //friend list
+            break;
+
+            case 3:
+            //posts
+            break;
         }
     }
 }
