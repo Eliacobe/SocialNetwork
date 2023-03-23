@@ -6,15 +6,18 @@ import java.io.*;
 public class Menu
 {
 
+    public Menu(){
+        MainUser = new User("JK12", "MainMan", "UoD", "Dundee");
+
+    }
     private static boolean running = true;
-
-
-    public static void profile()
+    private User MainUser;
+    public void profile()
     {
         System.out.println("To exit and go back to the menu press 1: ");
-        System.out.println(User.getName() + "             " + User.getUserID());
-        System.out.println("I live in " + User.getHometown);
-        System.out.println("I work at " + User.getWorkplace);
+        System.out.println(MainUser.getName() + "             " + MainUser.getUserID());
+        System.out.println("I live in " + MainUser.getHometown());
+        System.out.println("I work at " + MainUser.getWorkplace());
         System.out.println();
         System.out.println();
         System.out.println("If you would like to view your friends list press 2: ");
@@ -36,17 +39,15 @@ public class Menu
         }
     }
 
-    public static void ViewMyFriends()
+    public void ViewMyFriends()
     {
+        SocialNetwork.loadFromFile(afile);
         list<User> Friends = SocialNetwork.getMyFriends();
 
     }
 
-
-    public static void main(String[] args)
+    public void test()
     {
-
-        // User MainUser = User("JK12", "MainMan", "UoD", "Dundee");
         while(running)
         {
             Scanner scan = new Scanner(System.in);
@@ -79,5 +80,12 @@ public class Menu
             }
         }
 
+    }
+
+
+    public static void main(String[] args)
+    {
+        Menu menu = new Menu();
+        menu.test();
     }
 }
