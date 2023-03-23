@@ -101,4 +101,23 @@ class SocialNetwork
         }
         return filteredFriends;
     }
+
+    public List<User> friendRecommendations(String myUserID
+    {
+        List<User> recommendations = new ArrayList<>();
+        User me = getUser(myUserID);
+        List<User> myFriends = me.getFriends();
+        for (User friend : myFriends)
+        {
+            List<User> friendFriends = friend.getFriends();
+            for (User friendFriends : friendFriends)
+            {
+                if (!friendFriend.getUserID().equals(myUserID) && !myFriends.contains(friendFriend) && !recommendations.contains(friendFriend))
+                {
+                    recommendations.add(friendFriend);
+                }
+            }
+        }
+        return recommendations;
+    }
 }
