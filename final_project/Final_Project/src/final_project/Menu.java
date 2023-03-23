@@ -42,9 +42,8 @@ public class Menu
     public void ViewMyFriends()
     {
         SocialNetwork.loadFromFile(afile);
-        list<User> Friends = SocialNetwork.getMyFriends();
+        List<User> Friends = SocialNetwork.getMyFriends(MainUser.getUserID());
         System.out.println(Friends);
-
     }
 
     public void test()

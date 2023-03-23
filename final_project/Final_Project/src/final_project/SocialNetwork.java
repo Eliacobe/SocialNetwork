@@ -60,13 +60,13 @@ class SocialNetwork
         users.remove(user.getUserID());
     }
     
-    public list<User> getMyFriends(String myUserID)
+    public List<User> getMyFriends(String myUserID)
     {
         User me = getUser(myUserID);
         return me.getFriends();
     }
 
-    public list<User> getFriendFriends(String friendUserID)
+    public List<User> getFriendFriends(String friendUserID)
     {
         User friend = getUser(friendUserID);
         List<User> friendFriends = new ArrayList<>();
@@ -80,7 +80,7 @@ class SocialNetwork
         return friendFriends;
     }
 
-    public list<User> filterFriends(String myUserID, String filterType, String filterValue)
+    public List<User> filterFriends(String myUserID, String filterType, String filterValue)
     {
         List<User> myFriends = getMyFriends(myUserID);
         List<User> filteredFriends = new ArrayList<>();
