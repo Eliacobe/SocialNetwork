@@ -10,7 +10,7 @@ class User
     private String hometown;
     private List<User> friends;
     
-    public User(String userId, String name, String workplace, String hometown)
+    public User(String userID, String name, String workplace, String hometown)
     {
         this.userID = userID;
         this.name = name;
