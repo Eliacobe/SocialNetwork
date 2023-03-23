@@ -55,4 +55,16 @@ class User
         friends.remove(friend);
         friend.getFriends().remove(this);
     }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setWorkplace(String workplace){
+        this.workplace = workplace;
+    }
+
+    public void setHometown(String hometown){
+        this.hometown = hometown;
+    }
 }
