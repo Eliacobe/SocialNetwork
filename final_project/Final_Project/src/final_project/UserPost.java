@@ -43,6 +43,10 @@ public class UserPost {
 	public void setLikes(int likes) {
 		this.likes = likes;
 	}
+
+	public void addLikes(){
+		likes += 1;
+	}
 	
 	
 }
