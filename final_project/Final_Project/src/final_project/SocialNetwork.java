@@ -63,7 +63,7 @@ class SocialNetwork
     public list<User> getMyFriends(String myUserID)
     {
         User me = getUser(myUserID);
-        return me.getFriends;
+        return me.getFriends();
     }
 
     public list<User> getFriendFriends(String friendUserID)

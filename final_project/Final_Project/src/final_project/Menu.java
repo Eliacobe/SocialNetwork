@@ -43,6 +43,7 @@ public class Menu
     {
         SocialNetwork.loadFromFile(afile);
         list<User> Friends = SocialNetwork.getMyFriends();
+        System.out.println(Friends);
 
     }
 
