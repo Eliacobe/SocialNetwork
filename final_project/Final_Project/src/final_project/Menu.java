@@ -15,14 +15,19 @@ public class Menu
     SocialNetwork Social;
     private static boolean running = true;
     private User MainUser;
-    public void profile()
+    public void profile() throws IOException
     {
         System.out.println("To exit and go back to the menu press 1: ");
         System.out.println(MainUser.getName() + "             " + MainUser.getUserID());
         System.out.println("I live in " + MainUser.getHometown());
         System.out.println("I work at " + MainUser.getWorkplace());
         System.out.println();
-        PostList.ReadFile(MainUser.getUserID());
+        ReadingPostsFromFile PostList = new ReadingPostsFromFile();
+        PostList.readFromFile(MainUser.getUserID());
+        for(int i=0; i > PostList.posts.size(); i++ )
+        {
+            System.out.println(PostList.posts);
+        }
         System.out.println("If you would like to view your friends list press 2: ");
        
         Scanner scan = new Scanner(System.in);
@@ -69,7 +74,10 @@ public class Menu
             {
                 case 1:
                 {
-                    profile();
+                    try {
+                        profile();
+                    } catch (IOException e) {
+                    }
                 }
 
                 case 2: 
