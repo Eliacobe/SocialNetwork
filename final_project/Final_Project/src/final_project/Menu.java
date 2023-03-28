@@ -8,8 +8,10 @@ public class Menu
 
     public Menu(){
         MainUser = new User("JK12", "MainMan", "UoD", "Dundee");
+        Social = new SocialNetwork();
 
     }
+    SocialNetwork Social;
     private static boolean running = true;
     private User MainUser;
     public void profile()
@@ -41,10 +43,10 @@ public class Menu
 
     public void ViewMyFriends()
     {
-        SocialNetwork.loadFromFile(afile);
-        list<User> Friends = SocialNetwork.getMyFriends();
+        String afile = "socialNetworkTest.txt";
+        Social.loadFromFile(afile);
+        List<User> Friends = Social.getMyFriends(MainUser.getUserID());
         System.out.println(Friends);
-
     }
 
     public void test()

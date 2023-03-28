@@ -60,7 +60,7 @@ public class SocialNetwork
         users.remove(user.getUserID());
     }
     
-    public list<User> getMyFriends(String myUserID)
+    public List<User> getMyFriends(String myUserID)
     {
         User me = getUser(myUserID);
         return me.getFriends();
