@@ -1,6 +1,6 @@
 
 
-class SocialNetworkTest
+public class SocialNetworkTest
 {
     public void SocialNetworkTester()
     {
