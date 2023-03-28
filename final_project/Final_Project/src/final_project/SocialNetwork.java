@@ -101,7 +101,7 @@ public class SocialNetwork
         return filteredFriends;
     }
 
-    public List<User> friendRecommendations(String myUserID
+    public List<User> friendRecommendations(String myUserID)
     {
         List<User> recommendations = new ArrayList<>();
         User me = getUser(myUserID);
