@@ -44,11 +44,15 @@ public class Menu
     public void ViewMyFriends()
     {
         String afile = "socialNetworkTest.txt";
-        Social.loadFromFile(afile);
+        try {
+            Social.loadFromFile(afile);
+        } catch (IOException e) {
+        }
         List<User> Friends = Social.getMyFriends(MainUser.getUserID());
         System.out.println(Friends);
     }
 
+    
     public void test()
     {
         while(running)
@@ -56,8 +60,7 @@ public class Menu
             Scanner scan = new Scanner(System.in);
             System.out.println("To view your profile press 1: ");
             System.out.println("To view your friends list press 2: ");
-            System.out.println("To view your posts press 3: ");
-            System.out.println("To exit the Social Network press 4: ");
+            System.out.println("To exit the Social Network press 3: ");
 
             int ans = scan.nextInt();
     
@@ -72,10 +75,8 @@ public class Menu
                 {
                     ViewMyFriends();
                 }
-    
-    
                 
-                case 4: 
+                case 3: 
                 {
                     running = false;
                 }
