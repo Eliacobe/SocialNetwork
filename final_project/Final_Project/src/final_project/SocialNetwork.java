@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class SocialNetwork
+public class SocialNetwork
 {
     private Map<String, User> users;
     

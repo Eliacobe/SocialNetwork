@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class User
+public class User
 {
     private String userID;
     private String name;
