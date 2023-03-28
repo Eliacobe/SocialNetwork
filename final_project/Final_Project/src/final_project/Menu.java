@@ -10,6 +10,7 @@ public class Menu
         MainUser = new User("JK12", "MainMan", "UoD", "Dundee");
         Social = new SocialNetwork();
 
+
     }
     SocialNetwork Social;
     private static boolean running = true;
@@ -21,7 +22,7 @@ public class Menu
         System.out.println("I live in " + MainUser.getHometown());
         System.out.println("I work at " + MainUser.getWorkplace());
         System.out.println();
-        System.out.println();
+        PostList.ReadFile(MainUser.getUserID());
         System.out.println("If you would like to view your friends list press 2: ");
        
         Scanner scan = new Scanner(System.in);
