@@ -44,7 +44,7 @@ public class User
         return friends;
     }
     
-    public void addFrend(User friend)
+    public void addFriend(User friend)
     {
         friends.add(friend);
         friend.getFriends().add(this);
