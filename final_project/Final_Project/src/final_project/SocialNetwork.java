@@ -62,10 +62,10 @@ public class SocialNetwork
     public list<User> getMyFriends(String myUserID)
     {
         User me = getUser(myUserID);
-        return me.getFriends;
+        return me.getFriends();
     }
 
-    public list<User> getFriendFriends(String friendUserID)
+    public List<User> getFriendFriends(String friendUserID)
     {
         User friend = getUser(friendUserID);
         List<User> friendFriends = new ArrayList<>();
@@ -79,7 +79,7 @@ public class SocialNetwork
         return friendFriends;
     }
 
-    public list<User> filterFriends(String myUserID, String filterType, String filterValue)
+    public List<User> filterFriends(String myUserID, String filterType, String filterValue)
     {
         List<User> myFriends = getMyFriends(myUserID);
         List<User> filteredFriends = new ArrayList<>();
@@ -108,7 +108,7 @@ public class SocialNetwork
         List<User> myFriends = me.getFriends();
         for (User friend : myFriends)
         {
-            List<User> friendFriends = friend.getFriends();
+            List<User> friendFriend = friend.getFriends();
             for (User friendFriends : friendFriends)
             {
                 if (!friendFriend.getUserID().equals(myUserID) && !myFriends.contains(friendFriend) && !recommendations.contains(friendFriend))
