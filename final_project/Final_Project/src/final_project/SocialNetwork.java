@@ -110,11 +110,11 @@ public class SocialNetwork
         for (User friend : myFriends)
         {
             List<User> friendFriend = friend.getFriends();
-            for (User friendFriends : friendFriends)
+            for (User friendFriends : friendFriend)
             {
-                if (!friendFriend.getUserID().equals(myUserID) && !myFriends.contains(friendFriend) && !recommendations.contains(friendFriend))
+                if (!friendFriends.getUserID().equals(myUserID) && !myFriends.contains(friendFriend) && !recommendations.contains(friendFriend))
                 {
-                    recommendations.add(friendFriend);
+                    recommendations.add(friendFriends);
                 }
             }
         }
