@@ -2,7 +2,7 @@ package final_project;
 import java.util.*;
 import java.io.*;
 
-class SocialNetwork
+public class SocialNetwork
 {
     private Map<String, User> users;
     
@@ -102,7 +102,7 @@ class SocialNetwork
         return filteredFriends;
     }
 
-    public List<User> friendRecommendations(String myUserID
+    public List<User> friendRecommendations(String myUserID)
     {
         List<User> recommendations = new ArrayList<>();
         User me = getUser(myUserID);
