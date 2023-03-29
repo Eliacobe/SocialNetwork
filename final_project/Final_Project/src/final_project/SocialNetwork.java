@@ -3,15 +3,24 @@ import java.util.*;
 import java.io.*;
 import java.util.HashSet;
 
+/**
+*The main class for the social network.
+ */
+
 public class SocialNetwork
 {
     private Map<String, User> users;
-    
+    /**
+    *constructor for SocialNetwork sets new hashmap.
+ */
     public SocialNetwork()
     {
         this.users = new HashMap<>();
     }
-    
+    /**
+    *loads the users from the users file.
+    *@peram String filename
+ */
     public void loadFromFile(String filename) throws IOException
     {
         try (BufferedReader reader = new BufferedReader(new FileReader(filename)))
@@ -29,7 +38,10 @@ public class SocialNetwork
             }
         }
     }
-    
+    /**
+    *saves users to user file
+    *@peram String filename
+ */
     public void saveToFile(String filename) throws IOException
     {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename)))
@@ -41,6 +53,11 @@ public class SocialNetwork
             }
         }
     }
+    /**
+    *getter method for userID
+    *@peram String userID
+    *@return User user of given ID. 
+ */
     
     public Set<String> loadFriends(String filename) throws IOException
     {
@@ -72,12 +89,17 @@ public class SocialNetwork
     {
         return users.get(userID);
     }
-    
+    /**adds user to the users hashmap
+    @peram String userID
+ */
     public void addUser(User user)
     {
         users.put(user.getUserID(), user);
     }
-    
+    /**
+    *remove user from users hashmap
+    *@peram User user
+ */
     public void removeUser(User user)
     {
         for (User friend : user.getFriends())
@@ -86,13 +108,21 @@ public class SocialNetwork
         }
         users.remove(user.getUserID());
     }
-    
+    /**
+    *getter method for friends of the user
+    *@peram String myUserID
+    *@return List<User> list of friends of the user.
+ */
     public List<User> getMyFriends(String myUserID)
     {
         User me = getUser(myUserID);
         return me.getFriends();
     }
-
+/**
+*getter fror friends of friends
+*@peram String friendUserID
+*@return List<User> list of friends for a friend of the user
+ */
     public List<User> getFriendFriends(String friendUserID)
     {
         User friend = getUser(friendUserID);
@@ -106,7 +136,13 @@ public class SocialNetwork
         }
         return friendFriends;
     }
-
+/**
+*method for filtering friends based on specific attributes.
+*@peram String myUserID
+*@peram String filterType
+*@peram String filterValue
+*@return List<User> a list with freinds that meet the filter.
+ */
     public List<User> filterFriends(String myUserID, String filterType, String filterValue)
     {
         List<User> myFriends = getMyFriends(myUserID);
@@ -128,7 +164,11 @@ public class SocialNetwork
         }
         return filteredFriends;
     }
-
+/**
+*method to give friend reccomendations
+*@peram String myUserID
+*@return List<User> a list containing the reccomendations.
+ */
     public List<User> friendRecommendations(String myUserID)
     {
         List<User> recommendations = new ArrayList<>();
