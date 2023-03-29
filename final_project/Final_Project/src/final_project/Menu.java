@@ -2,10 +2,16 @@ package final_project;
 import java.util.*;
 import java.io.*;
 
-
+/**
+*Menu Class also inclueds main method
+ */
 public class Menu
 {
-
+/**
+*Constuctor method for Menu Class.
+*Sets main user and creates new social netowork instance
+*
+ */
     public Menu(){
         MainUser = new User("JK12", "MainMan", "UoD", "Dundee");
         Social = new SocialNetwork();
@@ -14,6 +20,9 @@ public class Menu
     SocialNetwork Social;
     private static boolean running = true;
     private User MainUser;
+    /**
+    *Profile method for displaying infomation about the users profile to the user.
+ */
     public void profile()
     {
         System.out.println("To exit and go back to the menu press 1: ");
@@ -40,7 +49,9 @@ public class Menu
             }
         }
     }
-
+/**
+*Method to view friends of the user. 
+ */
     public void ViewMyFriends()
     {
         String afile = "socialNetworkTest.txt";
@@ -48,7 +59,9 @@ public class Menu
         List<User> Friends = Social.getMyFriends(MainUser.getUserID());
         System.out.println(Friends);
     }
-
+/**
+*Method to allow for testing of the program. Is the acting menu selection.
+ */
     public void test()
     {
         while(running)
@@ -85,7 +98,10 @@ public class Menu
 
     }
 
-
+/**
+*Main method
+*@peram String[] args
+ */
     public static void main(String[] args)
     {
         Menu menu = new Menu();
