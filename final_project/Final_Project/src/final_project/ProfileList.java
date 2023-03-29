@@ -18,13 +18,14 @@ public class ProfileList {
 		for(int i =0; i < friends.size(); i++){
 			 finding = friends.get(i);
 			 if (finding.getUserID() == friendToFind){
-				return finding
+				return finding;
 			 }
 		}
 		return null;
 	}
 	
 	public boolean removeFriend() {
+		return false;
 		
 	}
 	

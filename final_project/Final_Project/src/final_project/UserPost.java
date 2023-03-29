@@ -44,10 +44,6 @@ public class UserPost {
 	public void addLikes() {
 		likes+=1;
 	}
-
-	public void addLikes(){
-		likes += 1;
-	}
 	
 	
 }
