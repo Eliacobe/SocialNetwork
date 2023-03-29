@@ -4,6 +4,7 @@ import java.util.*;
 
 public class User
 {
+    // Creates variable for the user
     private String userID;
     private String name;
     private String workplace;
@@ -12,6 +13,7 @@ public class User
     
     public User(String userID, String name, String workplace, String hometown)
     {
+        // Constructor method for User
         this.userID = userID;
         this.name = name;
         this.workplace = workplace;
