@@ -1,34 +1,35 @@
 package final_project;
 
 public class UserPost {
-	private int postID;
-	private int userID;
+	private String postID;
+	private String userID;
 	private String content;
 	private int likes;
 	
-	public UserPost(int postID, int userID, String content, int likes){
+	public UserPost(String postID, String userID, String content, int likes){
 		this.postID = postID;
 		this.userID = userID;
 		this.content = content;
 		this.likes = likes;
 	}
-	public UserPost(int postID, int userID, String content){
+	public UserPost(String postID, String userID, String content){
 		this.postID = postID;
 		this.userID = userID;
 		this.content = content;
 		likes = 0;
+
 		}
 	
-	public int getPostID() {
+	public String getPostID() {
 		return postID;
 	}
-	public void setPostID(int postID) {
+	public void setPostID(String postID) {
 		this.postID = postID;
 	}
-	public int getUserID() {
+	public String getUserID() {
 		return userID;
 	}
-	public void setUserID(int userID) {
+	public void setUserID(String userID) {
 		this.userID = userID;
 	}
 	public String getContent() {
