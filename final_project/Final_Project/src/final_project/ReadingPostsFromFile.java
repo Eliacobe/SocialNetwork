@@ -14,7 +14,7 @@ public class ReadingPostsFromFile
     public void readFromFile(String filename) throws FileNotFoundException, IOException
     {
         String file = filename + ".txt";
-        try (BufferedReader reader = new BufferedReader(new FileReader(file)))
+        try (BufferedReader reader = new BufferedReader(new FileReader("JK12.txt")))
         {
             String line;
             try {
@@ -27,9 +27,13 @@ public class ReadingPostsFromFile
                     UserPost post = new UserPost(postID, filename, content, likes);
                     posts.add(post); 
                 }
-            } catch (NumberFormatException e) {
-            } catch (IOException e) {
+            } 
+            catch (NumberFormatException e) 
+            {
+            } 
+            catch (IOException e) {
             }
         }
+
     }
 }

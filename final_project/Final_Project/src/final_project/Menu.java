@@ -17,19 +17,30 @@ public class Menu
     private User MainUser;
     public void profile()
     {
+
+        //flushes the screen so that  it looks nicer
         System.out.print("\033[H\033[2J");  
-        System.out.flush();  
+        System.out.flush(); 
+        
+        
         System.out.println("To exit and go back to the menu press 1: ");
         System.out.println(MainUser.getName() + "             " + MainUser.getUserID());
         System.out.println("I live in " + MainUser.getHometown());
         System.out.println("I work at " + MainUser.getWorkplace());
         System.out.println();
+
+        //posts being loaded from file then displayed
         ReadingPostsFromFile PostList = new ReadingPostsFromFile();
+
+
         try {
             PostList.readFromFile(MainUser.getUserID());
         } catch (IOException e) {
-            System.out.println("failed to load posts ");
+            e.printStackTrace();
+            System.out.println("failed to load posts");
         }
+
+        //looping through the posts to display them
         for(int i=0; i > PostList.posts.size(); i++ )
         {
             System.out.println(PostList.posts);
@@ -57,6 +68,7 @@ public class Menu
         }
     }
 
+    //show a list of all the main users friends
     public boolean ViewMyFriends()
     {
         boolean loaded = false;
@@ -72,10 +84,31 @@ public class Menu
             System.out.println("Failed to load");
             e.printStackTrace();
         }
+
+        System.out.println("To return to the menu press 1:  ");
+        System.out.println("To return to your profile press 2:  ");
+        Scanner scan = new Scanner(System.in);
+        int ans = scan.nextInt();
+
+        switch(ans)
+        {
+            case (1): 
+            {
+                System.out.println("Exiting");
+            }
+            break;
+
+            case (2): 
+            {
+                profile();
+            }
+            break;
+        }
+
         return loaded;
     }
 
-    
+    //main 
     public void test()
     {
         while(running)
