@@ -23,7 +23,7 @@ public class ReadingPostsFromFile
                 String content = fields[1];
                 int likes = Integer.parseInt(fields[2]);
                 UserPost post = new UserPost(postID, filename, content, likes);
-                posts.add(post); //needs to arraylist(?) in user to store their posts 
+                posts.add(post); 
             }
         }
     }
