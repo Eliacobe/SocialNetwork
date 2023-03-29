@@ -1,6 +1,7 @@
 package final_project;
 import java.util.*;
 import java.io.*;
+import java.util.HashSet;
 
 public class SocialNetwork
 {
@@ -36,6 +37,32 @@ public class SocialNetwork
             for (User user : users.values())
             {
                 writer.write(user.getUserID() + "," + user.getName() + "," + user.getWorkplace() + "," + user.getHometown());
+                writer.newLine();
+            }
+        }
+    }
+    
+    public Set<String> loadFriends(String filename) throws IOException
+    {
+        Set<String> friendIDs = new HashSet<>();
+        try(BufferedReader reader = new BufferedReader(new FileReader(filename)))
+        {
+            String line;
+            while ((line = reader.readLine()) != null)
+            {
+                friendIDs.add(line.trim());
+            }
+        }
+        return friendIDs;
+    }
+    
+    public void saveFriends(String filename, ArrayList<String> friendIDs) throws IOException 
+    {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename)))
+        {
+            for (String friendID : friendIDs)
+            {
+                writer.write(friendID);
                 writer.newLine();
             }
         }
