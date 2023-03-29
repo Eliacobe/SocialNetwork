@@ -13,7 +13,7 @@ public class ProfileList {
 		
 	}
 	
-	public User findFriend(int friendToFind) {
+	public User findFriend(String friendToFind) {
 		User finding;
 		for(int i =0; i < friends.size(); i++){
 			 finding = friends.get(i);
