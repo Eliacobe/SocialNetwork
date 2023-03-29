@@ -23,11 +23,14 @@ public class SocialNetwork
  */
     public void loadFromFile(String filename) throws IOException
     {
+        // Creating new instance of buffered reader to read from the file named
         try (BufferedReader reader = new BufferedReader(new FileReader(filename)))
         {
             String line;
             while ((line = reader.readLine()) != null)
             {
+                // While the line being read has nothing in it, read through each part of current line
+                // where fields are split by commas and then create new instance of User with said fields as parameters
                 String[] fields = line.split(",");
                 String userID = fields[0];
                 String name = fields[1];
@@ -179,6 +182,9 @@ public class SocialNetwork
             List<User> friendFriend = friend.getFriends();
             for (User friendFriends : friendFriend)
             {
+                // if the ID obtained from friendFriends.getUserID is not equal to the main user's ID
+                // and the main user's friend does not contain the ID and recommendations does not contain the ID
+                // then add the ID of that person to the recommendations list
                 if (!friendFriends.getUserID().equals(myUserID) && !myFriends.contains(friendFriend) && !recommendations.contains(friendFriend))
                 {
                     recommendations.add(friendFriends);
