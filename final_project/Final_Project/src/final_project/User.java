@@ -1,9 +1,12 @@
 package final_project;
-import java.util.*;
 import java.io.*;
+import java.util.*;
+
+
 /**
 *User class.
  */
+
 public class User
 {
     private String userID;

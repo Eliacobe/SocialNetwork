@@ -14,6 +14,7 @@ public class UserPost {
 	*@peram String content
 	*@peram int likes
  */
+
 	public UserPost(String postID, String userID, String content, int likes){
 		this.postID = postID;
 		this.userID = userID;
@@ -26,11 +27,13 @@ public class UserPost {
 	*@peram String userID
 	*@peram String content
  */
+
 	public UserPost(String postID, String userID, String content){
 		this.postID = postID;
 		this.userID = userID;
 		this.content = content;
 		likes = 0;
+
 		}
 	/**
 	*getter method for postID
@@ -57,6 +60,7 @@ public class UserPost {
 		*setter method for userID
 	*@peram String userID
  */
+
 	public void setUserID(String userID) {
 		this.userID = userID;
 	}
@@ -87,5 +91,5 @@ public class UserPost {
 	public void addLikes() {
 		likes+=1;
 	}
-	
+
 }
