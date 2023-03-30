@@ -2,3 +2,6 @@ TD70,Smith Smith,UoD,Tay Port
 FY17,John Lime,Dundee Council,Dundee
 UX11,Liam Gravich,Police,Perth
 JK12,MainMan,UoD,Dundee
+AX02,Jake Dillan,Starbucks,London
+PY15,Sam Smith,Studio 3,Glasgow
+SS03,Dylan Bob,Dundee Theatre,Dundee

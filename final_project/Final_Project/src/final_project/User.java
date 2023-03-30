@@ -1,6 +1,6 @@
 package final_project;
-import java.io.*;
 import java.util.*;
+import java.io.*;
 
 
 /**
@@ -9,7 +9,6 @@ import java.util.*;
 
 public class User
 {
-    // Creates variable for the user
     private String userID;
     private String name;
     private String workplace;
@@ -24,7 +23,6 @@ public class User
  */
     public User(String userID, String name, String workplace, String hometown)
     {
-        // Constructor method for User
         this.userID = userID;
         this.name = name;
         this.workplace = workplace;
@@ -63,12 +61,21 @@ public class User
     {
         return hometown;
     }
+
+    
+    public void setFriends(List<User> friendList){
+        friends = friendList;
+    }
+    
+
     /**
     *Getter method for friends
     *@return List<User> friends
  */
+
     public List<User> getFriends()
     {
+        //System.out.println(friends);
         return friends;
     }
     /**
@@ -77,14 +84,26 @@ public class User
  */
     public void addFriend(User friend)
     {
-        friends.add(friend);
-        friend.getFriends().add(this);
+        if (friend != null)
+        {
+            friends.add(friend);
+            friend.getFriends().add(this);
+        }
+        else
+        {
+            System.out.println("User not found");
+        }
     }
+
+    
+    public void removeFriend(User friend)
+
     /**
     *remove friends from friends hashmap
     *@peram User friend
  */
     public void removerFriend(User friend)
+
     {
         friends.remove(friend);
         friend.getFriends().remove(this);
