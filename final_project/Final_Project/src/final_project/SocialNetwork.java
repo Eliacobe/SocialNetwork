@@ -10,18 +10,23 @@ public class SocialNetwork
     public SocialNetwork()
     {
         this.users = new HashMap<>();
+        try
+        {
+            loadFromFile("socialNetworkTest.txt");
+        }
+        catch (IOException ioe)
+        {
+            ioe.printStackTrace();
+        }
     }
     
     public void loadFromFile(String filename) throws IOException
     {
-        // Creating new instance of buffered reader to read from the file named
         try (BufferedReader reader = new BufferedReader(new FileReader(filename)))
         {
             String line;
             while ((line = reader.readLine()) != null)
             {
-                // While the line being read has nothing in it, read through each part of current line
-                // where fields are split by commas and then create new instance of User with said fields as parameters
                 String[] fields = line.split(",");
                 String userID = fields[0];
                 String name = fields[1];
@@ -65,7 +70,7 @@ public class SocialNetwork
         {
             for (String friendID : friendIDs)
             {
-                writer.write(friendID);
+                writer.append(friendID);
                 writer.newLine();
             }
         }
@@ -74,6 +79,10 @@ public class SocialNetwork
     public User getUser(String userID)
     {
         return users.get(userID);
+    }
+    
+    public Map<String, User> getUsers(){
+        return users;
     }
     
     public void addUser(User user)
@@ -93,6 +102,7 @@ public class SocialNetwork
     public List<User> getMyFriends(String myUserID)
     {
         User me = getUser(myUserID);
+        //System.out.println(me.getUserID());
         return me.getFriends();
     }
 
@@ -135,19 +145,22 @@ public class SocialNetwork
     public List<User> friendRecommendations(String myUserID)
     {
         List<User> recommendations = new ArrayList<>();
-        User me = getUser(myUserID);
-        List<User> myFriends = me.getFriends();
+        List<User> myFriends = getMyFriends(myUserID);
+        //System.out.println(myFriends);
         for (User friend : myFriends)
         {
             List<User> friendFriend = friend.getFriends();
             for (User friendFriends : friendFriend)
             {
-                // if the ID obtained from friendFriends.getUserID is not equal to the main user's ID
-                // and the main user's friend does not contain the ID and recommendations does not contain the ID
-                // then add the ID of that person to the recommendations list
-                if (!friendFriends.getUserID().equals(myUserID) && !myFriends.contains(friendFriend) && !recommendations.contains(friendFriend))
+                if (friendFriends != null){
+                    if (!friendFriends.getUserID().equals(myUserID) && !myFriends.contains(friendFriend) && !recommendations.contains(friendFriend))
+                    {
+                        recommendations.add(friendFriends);
+                    }
+                }
+                else
                 {
-                    recommendations.add(friendFriends);
+                    System.out.println("Error");
                 }
             }
         }
