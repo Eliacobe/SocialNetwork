@@ -38,22 +38,22 @@ public class Menu
         System.out.println("I work at " + MainUser.getWorkplace());
         System.out.println();
 
-        //posts being loaded from file then displayed
-        ReadingPostsFromFile PostList = new ReadingPostsFromFile();
+        // //posts being loaded from file then displayed
+        // ReadingPostsFromFile PostList = new ReadingPostsFromFile();
 
 
-        try {
-            PostList.readFromFile(MainUser.getUserID());
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("failed to load posts");
-        }
+        // try {
+        //     PostList.readFromFile(MainUser.getUserID());
+        // } catch (IOException e) {
+        //     e.printStackTrace();
+        //     System.out.println("failed to load posts");
+        // }
 
-        //looping through the posts to display them
-        for(int i=0; i > PostList.posts.size(); i++ )
-        {
-            System.out.println(PostList.posts);
-        }
+        // //looping through the posts to display them
+        // for(int i=0; i > PostList.posts.size(); i++ )
+        // {
+        //     System.out.println(PostList.posts);
+        // }
 
 
         System.out.println("If you would like to view your friends list press 2: ");
